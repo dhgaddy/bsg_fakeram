@@ -81,6 +81,14 @@ class Memory:
         standby_leakage_per_bank_mW=0.05, fo4_ps=200.0,
         pin_dynamic_power_mW=0.015,
       ),
+      # gt2n (2nm GAAFET): faster than asap7 (FO4 ~5 ps vs 9 ps).
+      # Access time scaled from sky130hd by memory-path ratio (1.4 ns / 14x ≈ 0.10 ns).
+      # All values are order-of-magnitude estimates; adjust if characterised.
+      2: dict(
+        access_time_ns=0.10, cycle_time_ns=0.075,
+        standby_leakage_per_bank_mW=0.10, fo4_ps=5.0,
+        pin_dynamic_power_mW=0.001,
+      ),
     }
     if process.tech_nm in TECH_ANALYTIC:
       self.tech_node_nm  = process.tech_nm

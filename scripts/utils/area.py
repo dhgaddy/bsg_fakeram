@@ -13,6 +13,10 @@ import math
 TECH_BITCELL_UM = {
     7:   (0.108, 0.270),
     130: (1.070, 1.740),
+    # gt2n (2nm GAAFET): 1 site width × 1 site height (site = 0.042×0.144 µm).
+    # Bitcell area 0.0060 µm² is consistent with the 4× asap7→gt2n die-area scaling
+    # ratio established empirically on the HighTide floonoc port.
+    2:   (0.042, 0.144),
 }
 
 # Total SRAM area = bitcell_array * PERIPHERY_MULT_PER_DIM in each
